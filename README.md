@@ -4,6 +4,7 @@ A simple Docker and VS Code base dev enviroment for playing with [Genesis World]
 
 # Requirements 
 
+## Software 
 Install the [NVIDIA Container toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) on your host machine.
 
 Follow the instructions online or run this script on your **host machine**
@@ -14,7 +15,12 @@ sudo scripts/install-nvidia-runtime.sh
 sudo reboot now
 ```
 
-# Hardware 
+## Hardware 
 
 This should "just work" for any host machine with a discrete Nvidia GPU 
 
+# Run the example 
+
+```python 
+python hello-genesis.py
+```
