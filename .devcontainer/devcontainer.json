@@ -5,32 +5,29 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
     "postCreateCommand": "/workspace/scripts/post-create-commands.sh",
     "containerEnv": {
+        "LIBGL_ALWAYS_INDIRECT": "1",
         "NVIDIA_VISIBLE_DEVICES": "all",
-        "NVIDIA_DRIVER_CAPABILITIES": "compute,utility,graphics",
-        "LIBGL_ALWAYS_INDIRECT": "1"
+        "NVIDIA_DRIVER_CAPABILITIES": "compute,utility,graphics"
     },
     "runArgs": [
-        "--gpus",
-        "all",
+        "--gpus=all",
         "--network=host",
-        "-e",
-        "QT_X11_NO_MITSHM=1",
         "--shm-size=2g",
         "--entrypoint=/bin/bash",
         "-e",
         "DISPLAY=${env:DISPLAY}",
-        "--volume",
-        "/tmp/.X11-unix:/tmp/.X11-unix:rw",
-        "--volume",
-        "${env:XAUTHORITY}:/root/.Xauthority"
+        "-e",
+        "QT_X11_NO_MITSHM=1",
+        "--volume=/tmp/.X11-unix:/tmp/.X11-unix:rw",
+        "--volume=${env:XAUTHORITY}:/root/.Xauthority"
     ],
     "customizations": {
         "vscode": {
             "settings": {
                 "editor.tabSize": 2,
                 "editor.formatOnSave": true,
-                "remote.autoForwardPorts": false,
                 "files.insertFinalNewline": true,
+                "remote.autoForwardPorts": false,
                 "terminal.integrated.env.linux": {
                     "VIRTUAL_ENV": "${workspaceFolder}/.venv",
                     "PATH": "${workspaceFolder}/.venv/bin:${env:PATH}",
@@ -39,7 +36,7 @@
                 "[python]": {
                     "editor.defaultFormatter": "ms-python.black-formatter",
                     "editor.codeActionsOnSave": {
-                        "source.organizeImports": "always"
+                        "source.organizeImports": true
                     },
                     "python.defaultInterpreterPath": "./.venv/bin/python",
                     "python.linting.enabled": true,
