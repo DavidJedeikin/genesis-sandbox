@@ -1,0 +1,20 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Ignore virtual environments
+.venv/
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore environment configuration files
+.env
+
+.genisis-venv/

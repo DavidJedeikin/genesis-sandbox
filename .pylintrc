@@ -1,0 +1,13 @@
+[MESSAGES CONTROL]
+enable=invalid-name,unused-variable
+disable=missing-docstring
+
+[BASIC]
+include-naming-hint=yes
+function-naming-style=snake_case
+method-naming-style=snake_case
+variable-naming-style=snake_case
+class-naming-style=PascalCase
+
+[FORMAT]
+max-line-length=88  # Align with Black's default formatting
