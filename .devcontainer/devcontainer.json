@@ -1,5 +1,5 @@
 {
-    "name": "python-playground",
+    "name": "genesis-playground",
     "dockerFile": "Dockerfile",
     "workspaceFolder": "/workspace",
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
